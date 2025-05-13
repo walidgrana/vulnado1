@@ -79,36 +79,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
-            <!-- Snyk Maven Plugin -->
-            <plugin>
-                <groupId>io.snyk</groupId>
-                <artifactId>snyk-maven-plugin</artifactId>
-                <version>2.2.0</version>
-                <inherited>false</inherited>
-                <executions>
-                    <execution>
-                        <id>snyk-test</id>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>snyk-monitor</id>
-                        <goals>
-                            <goal>monitor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- Utilisation de la variable d'environnement pour le token Snyk -->
-                    <apiToken>${env.SNYK_TOKEN}</apiToken>
-                    <args>
-                        <arg>--all-projects</arg>
-                    </args>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
 </project>
